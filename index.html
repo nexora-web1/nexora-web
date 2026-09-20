@@ -1,219 +1,461 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NEXORA WEB | Build. Launch. Grow.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<title>NEXORA WEB | Professional Website Development</title>
+<meta name="description" content="NEXORA WEB builds modern, fast and mobile-friendly websites for businesses, brands, creators and online stores.">
+<meta name="keywords" content="website development, business website, ecommerce website, portfolio website, landing page, PWA website">
+<meta name="robots" content="index, follow">
 
-    body {
-      background: #070b18;
-      color: white;
-      line-height: 1.6;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 7%;
-      background: #0b1022;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #7c5cff;
-    }
+body{
+  background:#070b18;
+  color:#fff;
+  line-height:1.6;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-    }
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 7%;
+  background:rgba(7,11,24,.95);
+  border-bottom:1px solid #202744;
+}
 
-    .hero {
-      min-height: 85vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 60px 7%;
-      background: linear-gradient(135deg, #070b18, #171039);
-    }
+.logo{
+  font-size:23px;
+  font-weight:800;
+  color:#8b6cff;
+}
 
-    .hero h1 {
-      font-size: 48px;
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
+nav a{
+  color:#fff;
+  text-decoration:none;
+  margin-left:18px;
+  font-size:14px;
+}
 
-    .hero h1 span {
-      color: #8b6cff;
-    }
+.hero{
+  min-height:88vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:70px 7%;
+  background:
+    radial-gradient(circle at 80% 20%,#352477 0,transparent 30%),
+    linear-gradient(135deg,#070b18,#15102f);
+}
 
-    .hero p {
-      color: #c5c8d6;
-      max-width: 600px;
-      margin-bottom: 30px;
-      font-size: 18px;
-    }
+.badge{
+  display:inline-block;
+  width:max-content;
+  padding:7px 13px;
+  border:1px solid #51458c;
+  border-radius:30px;
+  color:#bcaeff;
+  margin-bottom:20px;
+  font-size:13px;
+}
 
-    .btn {
-      display: inline-block;
-      background: #7c5cff;
-      color: white;
-      padding: 14px 24px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      width: fit-content;
-    }
+.hero h1{
+  font-size:clamp(42px,8vw,72px);
+  line-height:1.05;
+  max-width:850px;
+}
 
-    section {
-      padding: 70px 7%;
-    }
+.hero h1 span{
+  color:#8b6cff;
+}
 
-    .title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+.hero p{
+  max-width:650px;
+  margin:22px 0 30px;
+  color:#c4c8d8;
+  font-size:18px;
+}
 
-    .title h2 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
+.btn{
+  display:inline-block;
+  width:max-content;
+  padding:14px 24px;
+  border-radius:10px;
+  background:#7c5cff;
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  border:0;
+  cursor:pointer;
+}
 
-    .title p {
-      color: #aeb2c2;
-    }
+.btn:hover{
+  opacity:.9;
+}
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
+section{
+  padding:80px 7%;
+}
 
-    .card {
-      background: #10162b;
-      padding: 25px;
-      border: 1px solid #252c47;
-      border-radius: 16px;
-    }
+.title{
+  text-align:center;
+  margin-bottom:45px;
+}
 
-    .card h3 {
-      margin-bottom: 10px;
-      color: #9b84ff;
-    }
+.title h2{
+  font-size:34px;
+  margin-bottom:10px;
+}
 
-    .card p {
-      color: #b8bdce;
-      font-size: 14px;
-    }
+.title p{
+  color:#aeb3c5;
+}
 
-    .cta {
-      text-align: center;
-      background: #111832;
-    }
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      color: #8e93a7;
-      background: #050813;
-    }
+.card{
+  background:#10162b;
+  border:1px solid #252d4a;
+  border-radius:18px;
+  padding:28px;
+  transition:.2s;
+}
 
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 38px;
-      }
+.card:hover{
+  transform:translateY(-5px);
+  border-color:#6655c9;
+}
 
-      .hero p {
-        font-size: 16px;
-      }
-    }
-  </style>
+.icon{
+  font-size:30px;
+  margin-bottom:15px;
+}
+
+.card h3{
+  color:#a995ff;
+  margin-bottom:9px;
+}
+
+.card p{
+  color:#b9bed0;
+  font-size:14px;
+}
+
+.pricing{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.price-card{
+  background:#10162b;
+  border:1px solid #292f49;
+  border-radius:18px;
+  padding:30px;
+}
+
+.price-card h3{
+  color:#b19fff;
+}
+
+.price{
+  font-size:30px;
+  font-weight:bold;
+  margin:15px 0;
+}
+
+.price-card p{
+  color:#b9bed0;
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+.about{
+  background:#0d1327;
+}
+
+.about-box{
+  max-width:800px;
+  margin:auto;
+  text-align:center;
+}
+
+.about-box p{
+  color:#bdc2d3;
+  margin-top:15px;
+}
+
+.order{
+  background:linear-gradient(135deg,#111832,#19113b);
+}
+
+form{
+  max-width:650px;
+  margin:auto;
+  background:#0b1022;
+  padding:30px;
+  border-radius:18px;
+  border:1px solid #292f4c;
+}
+
+input,select,textarea{
+  width:100%;
+  padding:14px;
+  margin-bottom:15px;
+  background:#151b31;
+  border:1px solid #303750;
+  border-radius:9px;
+  color:#fff;
+  outline:none;
+}
+
+textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+form label{
+  display:block;
+  margin-bottom:6px;
+  color:#d9dcec;
+  font-size:14px;
+}
+
+footer{
+  text-align:center;
+  padding:30px 7%;
+  color:#858ca2;
+  background:#050813;
+  font-size:14px;
+}
+
+@media(max-width:600px){
+  nav{
+    padding:15px 5%;
+  }
+
+  nav a{
+    font-size:12px;
+    margin-left:8px;
+  }
+
+  section{
+    padding:65px 5%;
+  }
+
+  .hero{
+    padding:60px 5%;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  form{
+    padding:22px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <nav>
-    <div class="logo">NEXORA WEB</div>
+<nav>
+  <div class="logo">NEXORA WEB</div>
+  <div>
     <a href="#services">Services</a>
-  </nav>
+    <a href="#pricing">Pricing</a>
+    <a href="#order">Order</a>
+  </div>
+</nav>
 
-  <section class="hero">
-    <h1>Build. <span>Launch.</span> Grow.</h1>
+<section class="hero">
+  <div class="badge">⚡ Modern • Fast • Mobile Friendly</div>
+
+  <h1>Build. <span>Launch.</span> Grow.</h1>
+
+  <p>
+    We create modern websites for businesses, brands, creators and
+    entrepreneurs. Turn your idea into a professional online presence.
+  </p>
+
+  <a href="#order" class="btn">GET YOUR WEBSITE</a>
+</section>
+
+<section id="services">
+
+  <div class="title">
+    <h2>What We Build</h2>
+    <p>Professional websites designed around your goals.</p>
+  </div>
+
+  <div class="services">
+
+    <div class="card">
+      <div class="icon">💼</div>
+      <h3>Business Websites</h3>
+      <p>Professional websites that help businesses build trust online.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🛒</div>
+      <h3>Online Stores</h3>
+      <p>Modern ecommerce websites for products and online selling.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🍽️</div>
+      <h3>Restaurant Websites</h3>
+      <p>Menus, contact information and attractive restaurant pages.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎨</div>
+      <h3>Portfolio Websites</h3>
+      <p>Show your skills, projects and work in a professional way.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🚀</div>
+      <h3>Landing Pages</h3>
+      <p>Focused pages for products, services and marketing campaigns.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📱</div>
+      <h3>PWA Websites</h3>
+      <p>Installable websites designed to feel more like mobile apps.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="pricing">
+
+  <div class="title">
+    <h2>Simple Packages</h2>
+    <p>Choose a package that matches your project.</p>
+  </div>
+
+  <div class="pricing">
+
+    <div class="price-card">
+      <h3>Starter</h3>
+      <div class="price">Custom</div>
+      <p>Perfect for a simple personal or small business website.</p>
+      <a href="#order" class="btn">Choose</a>
+    </div>
+
+    <div class="price-card">
+      <h3>Business</h3>
+      <div class="price">Custom</div>
+      <p>For businesses that need a complete professional website.</p>
+      <a href="#order" class="btn">Choose</a>
+    </div>
+
+    <div class="price-card">
+      <h3>Premium</h3>
+      <div class="price">Custom</div>
+      <p>Advanced website projects with extra features and customization.</p>
+      <a href="#order" class="btn">Choose</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="about">
+
+  <div class="about-box">
+    <div class="title">
+      <h2>Why NEXORA WEB?</h2>
+    </div>
 
     <p>
-      Professional websites for businesses, creators and brands.
-      We turn your ideas into fast, modern and mobile-friendly websites.
+      We focus on clean design, mobile-friendly layouts, fast performance
+      and websites that help brands create a strong online presence.
     </p>
 
-    <a href="#contact" class="btn">GET YOUR WEBSITE</a>
-  </section>
+    <p>
+      From a simple landing page to a complete online store,
+      NEXORA WEB turns ideas into websites.
+    </p>
+  </div>
 
-  <section id="services">
-    <div class="title">
-      <h2>What We Build</h2>
-      <p>Modern websites designed for your business.</p>
-    </div>
+</section>
 
-    <div class="services">
+<section class="order" id="order">
 
-      <div class="card">
-        <h3>Business Websites</h3>
-        <p>Professional websites that help your business build trust online.</p>
-      </div>
+  <div class="title">
+    <h2>Start Your Project</h2>
+    <p>Tell us about the website you want.</p>
+  </div>
 
-      <div class="card">
-        <h3>Online Stores</h3>
-        <p>Modern e-commerce websites for selling products online.</p>
-      </div>
+  <form onsubmit="sendOrder(event)">
 
-      <div class="card">
-        <h3>Restaurant Websites</h3>
-        <p>Beautiful websites with menus, contact information and location.</p>
-      </div>
+    <label>Your Name</label>
+    <input id="name" type="text" placeholder="Enter your name" required>
 
-      <div class="card">
-        <h3>Portfolio Websites</h3>
-        <p>Showcase your work, skills and projects professionally.</p>
-      </div>
+    <label>Website Type</label>
+    <select id="type" required>
+      <option value="">Select website type</option>
+      <option>Business Website</option>
+      <option>Online Store</option>
+      <option>Restaurant Website</option>
+      <option>Portfolio Website</option>
+      <option>Landing Page</option>
+      <option>PWA Website</option>
+    </select>
 
-      <div class="card">
-        <h3>Landing Pages</h3>
-        <p>Focused pages for products, services and marketing campaigns.</p>
-      </div>
+    <label>Your Requirements</label>
+    <textarea id="message" placeholder="Tell us what you need..." required></textarea>
 
-      <div class="card">
-        <h3>PWA Websites</h3>
-        <p>Installable websites that can feel like mobile applications.</p>
-      </div>
+    <button class="btn" type="submit">SEND PROJECT REQUEST</button>
 
-    </div>
-  </section>
+  </form>
+</section>
 
-  <section class="cta" id="contact">
-    <div class="title">
-      <h2>Ready to Build Your Website?</h2>
-      <p>Tell us what you need and we'll create it for you.</p>
-    </div>
+<footer>
+  © 2026 NEXORA WEB • Build. Launch. Grow.
+</footer>
 
-    <a class="btn" href="mailto:nexoraweb@example.com">
-      ORDER A WEBSITE
-    </a>
-  </section>
+<script>
+function sendOrder(event){
 
-  <footer>
-    © 2026 NEXORA WEB. All rights reserved.
-  </footer>
+  event.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const type = document.getElementById("type").value;
+  const message = document.getElementById("message").value;
+
+  const text =
+    "Hello NEXORA WEB!%0A%0A" +
+    "Name: " + encodeURIComponent(name) + "%0A" +
+    "Website Type: " + encodeURIComponent(type) + "%0A" +
+    "Requirements: " + encodeURIComponent(message);
+
+  alert("Your project request is ready. WhatsApp contact will be connected next.");
+
+}
+</script>
 
 </body>
   </html>
